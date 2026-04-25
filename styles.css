@@ -420,9 +420,17 @@ nav {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 4rem 1rem;
+  padding: 5rem 2rem;
   background-image: var(--gradient-1);
   border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.music__image {
+    display: none;
 }
 
 .music__content::before,
@@ -531,7 +539,7 @@ nav {
   }
 
   .nav__header {
-    flex: 1;
+    flex: 0;
     padding: 0;
     background-image: none;
   }
@@ -541,16 +549,22 @@ nav {
   }
 
   .nav__links {
+    flex: 1;
     position: static;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     background-image: none;
     transform: none;
+    gap: 3rem;
   }
 
   .nav__btns {
     display: flex;
-    flex: 1;
+    flex: 0;
+    min-width: fit-content;
   }
 
   .header__container {
@@ -599,7 +613,18 @@ nav {
   }
 
   .music__content {
-    padding: 4rem 2rem;
+    padding: 6rem 4rem;
+  }
+
+  .music__image {
+      display: block;
+  }
+
+  .music__image img {
+      max-width: 350px;
+      margin-inline: auto;
+      border-radius: 1rem;
+      box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
   }
 
   .music__content :is(.section__header, .section__description) {
